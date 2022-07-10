@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<p>Введи любое натуральное число в поле ввода и радуйся результату :)</p>
+
+<p>Число {{n}} простое: {{N}}</p>
+
+<form action="/prime" method="GET">
+  <input type="text" name="n" />
+  <input type="submit" value="Get!">
+</form>
+{% endblock %}
