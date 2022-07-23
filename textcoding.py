@@ -19,7 +19,7 @@ def de_en_code(text):
         code = chr(1425) + code
     with open(Directory, 'w+', encoding='utf-8') as txt:
         txt.write(code)
-    if len(text) < len(code) :
+    if len(text) < len(code):
         return print('Текст зашифрован!')
     else:
         return print('Текст расшифрован!')
