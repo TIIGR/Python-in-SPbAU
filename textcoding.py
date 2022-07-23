@@ -17,8 +17,7 @@ def de_en_code(text):
             else:
                 return print('Присутствуют недопустимые символы! Один из таких:', text[Ord])
         code = chr(1425) + code
-    with open(Directory, 'w+', encoding='utf-8') as txt:
-        txt.write(code)
+    open(Directory, 'w+', encoding='utf-8').write(code)
     if len(text) < len(code):
         return print('Текст зашифрован!')
     else:
