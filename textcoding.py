@@ -26,5 +26,4 @@ def de_en_code(text):
 
 
 Directory = str(input('Укажите полный путь к текстовому файлу: '))
-TxtFile = open(Directory, 'r', encoding='utf-8')
-de_en_code(TxtFile.read())
+de_en_code(open(Directory, 'r', encoding='utf-8').read())
