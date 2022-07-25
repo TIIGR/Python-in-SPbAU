@@ -25,4 +25,7 @@ def de_en_code(text):
 
 
 Directory = str(input('Укажите полный путь к текстовому файлу: '))
-de_en_code(open(Directory, 'r', encoding='utf-8').read())
+try:
+    de_en_code(open(Directory, 'r', encoding='utf-8').read())
+except FileNotFoundError:
+    print('Файл по указанному пути не существует!')
