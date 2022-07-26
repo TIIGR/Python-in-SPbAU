@@ -15,8 +15,8 @@ def Pf(x, eps):
     return taylor
 
 def desmos(x_min, x_max, step, eps):
-    if step <= 0:
-        print('Недопустимый размер шага')
+    if (step <= 0 or eps <= 0):
+        print('Недопустимые вводные данные')
         return -1
     X = []; Y = []; x_p = x_min
     while (x_min <= x_p <= x_max):
@@ -34,6 +34,6 @@ try:
         float(input('Шаг построения точек функи: ')),
         float(input('Погрешность значения функи: ')))
 except ValueError:
-    print('ValueError')
+    print('Недопустимые вводные данные (ValueError)')
 except OverflowError:
-    print('OverflowError')
+    print('Недопустимые вводные данные (OverflowError)')
