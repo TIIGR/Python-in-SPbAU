@@ -29,3 +29,5 @@ try:
     de_en_code(open(Directory, 'r', encoding='utf-8').read())
 except FileNotFoundError:
     print('Файл по указанному пути не существует!')
+except UnicodeDecodeError:
+    print('Файл не подходит для использования!')
