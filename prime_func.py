@@ -3,14 +3,14 @@ from math import factorial as fact
 
 
 def Pf(x, eps):
-    m = 0; taylor = m; p = 2
-    while abs((p * x ** m) / fact(m)) >= eps:
+    n = 0; taylor = n; p = 2
+    while abs((p * x ** n) / fact(n)) >= eps:
         d = 2
         while p % d != 0:
             d += 1
         if p == d:
-            m += 1
-            taylor += (p * x ** m) / fact(m)
+            n += 1
+            taylor += (p * x ** n) / fact(n)
         p += 1
     return taylor
 
