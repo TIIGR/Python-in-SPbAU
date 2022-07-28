@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plt
 from math import factorial as fact
 
 
@@ -24,24 +23,20 @@ def Pf(x, m):
         p += 1
     return taylor
 
-def desmos(x_min, x_max, m):
-    if m < 0 or x_max <= x_min:
-        print('Недопустимые вводные данные')
-        return -1
-    X = []; Y = []; x_p = x_min
-    while (x_min <= x_p <= x_max):
-        X.append(x_p)
-        Y.append(Pf(x_p, m))
-        x_p += (x_max - x_min) / 10 ** 3
-    plt.plot(X, Y)
-    plt.title('"Простая" функа ' + str(m) + '-го порядка производной')
-    plt.show()
+def tanmethod_for_roots_of_Pf(x_p, a):
+    b = 0
+    while b <= a:
+        x_1 = x_p - (Pf(x_p, b) / Pf(x_p, b + 1))
+        x_0 = x_p
+        while abs(x_0 - x_1) >= 10 ** -6:
+            x_0 = x_1
+            x_1 -= Pf(x_1, b) / Pf(x_1, b + 1)
+        print('Корень "Простой" функи для', b,'порядка производной:', x_1)
+        b += 1
     return 0
 
 try:
-    desmos(float(input('Начало локальной области определения функи: ')),
-        float(input('Конец локальной области определения функи: ')),
-        int(input('Порядок производной функи: ')))
+    tanmethod_for_roots_of_Pf(float(input('нач. аргумент: ')),int(input('макс. порядок производной: ')))
 except OverflowError:
     print('При вычислении невозможно обработать слишком большие числа ...')
 except ValueError:
