@@ -1,4 +1,3 @@
-from random import *
 from math import *
 from math import pi, e
 from math import factorial as fact
