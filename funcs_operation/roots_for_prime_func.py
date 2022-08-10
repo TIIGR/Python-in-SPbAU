@@ -14,6 +14,6 @@ def tanmethod_for_roots_of_Pf(x_p, a):
 try:
     tanmethod_for_roots_of_Pf(float(input('нач. аргумент: ')),int(input('макс. порядок производной: ')))
 except OverflowError:
-    print('При вычислении невозможно обработать слишком большие числа ...')
+    exit('При вычислении невозможно обработать слишком большие числа ...')
 except ValueError:
-    print('Недопустимые вводные данные ...')
+    exit('Недопустимые вводные данные ...')
