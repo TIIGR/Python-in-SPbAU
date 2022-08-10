@@ -3,7 +3,7 @@ from math import pi, e
 from math import factorial as fact
 
 
-def Pf(x, m):
+def pf(x, m):
     n = 0;  taylor = n; p = 1
     while (abs((p * x ** abs(n - m)) / fact(abs(n - m))) >= 10 ** -6) or (n < m):
         d = 2
