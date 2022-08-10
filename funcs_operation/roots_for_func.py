@@ -1,5 +1,4 @@
-from math import *
-from math import pi, e
+from funcs import *
 from sympy import diff
 from numpy import sign
 
