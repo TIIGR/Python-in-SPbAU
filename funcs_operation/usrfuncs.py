@@ -24,3 +24,7 @@ def pf(x, m):
             n += 1
         p += 1
     return taylor
+
+def relat(x):
+    if x != 10:
+        exit('test')
