@@ -1,6 +1,6 @@
-from funcs import *
 from sympy import diff
 from numpy import sign
+from usrfuncs import *
 
 
 def roots_for_func(func, x_min, x_max):
