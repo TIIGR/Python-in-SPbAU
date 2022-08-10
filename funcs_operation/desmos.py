@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plot
-from funcs import *
-
+from usrfuncs import *
 
 def desmos(func, x_min, x_max):
     if x_max <= x_min:

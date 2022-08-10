@@ -1,4 +1,5 @@
-from funcs import *
+from usrfuncs import *
+
 
 def tanmethod_for_roots_of_Pf(x_p, a):
     for b in range(a + 1):
