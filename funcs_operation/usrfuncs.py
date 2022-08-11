@@ -26,5 +26,25 @@ def pf(x, m):
     return taylor
 
 def relat(x):
-    if x != 10:
-        exit('test')
+    if x < 0:
+        exit('Недопустимая область определения!')
+    else:
+        n = p = 0
+        while n < floor(x):
+            d = 2
+            if p == 0:
+                p += 1
+                continue
+            elif p == 1:
+                p += 1
+                continue
+            else:
+                while (p % d != 0):
+                    d += 1
+                if p == d:
+                    n += 1
+                p += 1
+    if p == 0:
+        return p
+    else:
+        return ((p - 1) / fact(n))

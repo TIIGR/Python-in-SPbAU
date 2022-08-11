@@ -9,9 +9,9 @@ def desmos(func, x_min, x_max):
         q += 1
         X.append(x)
         Y.append(eval(func.replace('^', '**')))
-        if q % 10 == 0:
-            progress += 1
-            print('Загрузка: ' + f'{str(progress)}\r', end = '', flush = True)
+        progress += 0.1
+        line = str(round(progress, 2)) + '%'
+        print('Загрузка: ' + f'{line}\r', end = '', flush = True)
         x += (x_max - x_min) / 10 ** 3
     plot.plot(X, Y)
     plot.title('F(x) = ' + func)
