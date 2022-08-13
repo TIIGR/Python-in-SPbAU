@@ -4,7 +4,7 @@ from math import factorial as fact
 
 
 def pf(x, m):
-    n = 0;  taylor = n; p = 1
+    n = 0; taylor = n; p = 1
     while (abs((p * x ** abs(n - m)) / fact(abs(n - m))) >= 10 ** -6) or (n < m):
         d = 2
         while (n < m):
@@ -32,10 +32,7 @@ def relat(x):
         n = p = 0
         while n < floor(x):
             d = 2
-            if p == 0:
-                p += 1
-                continue
-            elif p == 1:
+            if p == 0 or p == 1:
                 p += 1
                 continue
             else:
@@ -48,3 +45,6 @@ def relat(x):
         return p
     else:
         return ((p - 1) / fact(n))
+
+def gaussf(x, a, b, c):
+    return a * e ** -((x - b) ** 2 / (2 * c ** 2))

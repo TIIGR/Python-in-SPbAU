@@ -13,7 +13,7 @@ def roots_for_func(func, x_min, x_max):
         if (eval(func) * eval(func.replace('x','x_p'))) / (eval(dfunc) * eval(dfunc.replace('x','x_p'))) <= 0:
             x_0 = x
             x_1 = x - (eval(func) / eval(dfunc))
-            while (abs(x_0 - x_1) >= 10 ** -11 and (x_min <= x_1 <= x_max)):
+            while (abs(x_0 - x_1) >= 10 ** -7 and (x_min <= x_1 <= x_max)):
                 x_0 = x_1
                 x_1 -= eval(func.replace('x','x_1')) / eval(dfunc.replace('x','x_1'))
             if x_min <= x_1 <= x_max:
