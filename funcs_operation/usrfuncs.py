@@ -1,7 +1,18 @@
 from math import *
 from math import pi, e
 from math import factorial as fact
+from random import *
 
+
+def streplace(func):
+    library = {
+        '^': '**',
+        'fi': '((1 + sqrt(5)) / 2)',
+        'Pf(x)': 'pf(x, 0)'
+    }
+    for i, j in library.items():
+        func = func.replace(i, j)
+    return func
 
 def pf(x, m):
     n = 0; taylor = n; p = 1
@@ -24,6 +35,16 @@ def pf(x, m):
             n += 1
         p += 1
     return taylor
+
+def mcm(x):
+    M, func, p = [], 0, 0
+    if x < 1:
+        exit('Недопустимая область определения!')
+    while (2 ** p) % floor(x) not in M:
+        M.append((2 ** p) % floor(x))
+        func += (2 ** p) % floor(x)
+        p += 1
+    return (func % floor(x))
 
 def relat(x):
     if x < 0:

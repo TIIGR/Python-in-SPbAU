@@ -17,7 +17,7 @@ def roots_for_func(func, x_min, x_max):
                 x_0 = x_1
                 x_1 -= eval(func.replace('x','x_1')) / eval(dfunc.replace('x','x_1'))
             if x_min <= x_1 <= x_max:
-                ROOTS.append(sign(round(x_1))*abs(round(x_1, 5)))
+                ROOTS.append(sign(round(x_1, 1))*abs(round(x_1, 5)))
         x += x_p - x
     if ROOTS != []:
         print('Для F(x) =', func, 'при x ∈ [' + str(x_min) + ', ' + str(x_max) + '] обнаружены корни:', ROOTS)
@@ -34,5 +34,3 @@ except ValueError:
     exit('Некорректно введенные данные ...')
 except TypeError:
     exit('Некорректно введенные данные ...')
-except NameError:
-    exit('Поддерживается только следующие функции и константы: pi, e, стандартные функции ...')
