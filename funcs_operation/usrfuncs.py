@@ -4,14 +4,17 @@ from math import factorial as fact
 from random import *
 
 
-def streplace(func):
+def streplace(func, do):
     library = {
         '^': '**',
         'fi': '((1 + sqrt(5)) / 2)',
         'Pf(x)': 'pf(x, 0)'
     }
     for i, j in library.items():
-        func = func.replace(i, j)
+        if do == 'there':
+            func = func.replace(i, j)
+        if do == 'back':
+            func = func.replace(j, i)
     return func
 
 def pf(x, m):
