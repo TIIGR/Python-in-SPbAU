@@ -10,13 +10,13 @@ def desmos(FUNC, X_MIN, X_MAX):
     for c in range(len(FUNC)):
         t = time()
         if (X_MAX[c] <= X_MIN[c]):
-            print('Недопустимый интервал сканирования для %s-й функи, пропускаем ее построение.' % (c + 1))
+            print('Недопустимый интервал сканирования для %s-й функи, пропускаем её построение.' % (c + 1))
             error += 1
             continue
         X, Y = [], []; x, percents = X_MIN[c], 0
         while X_MIN[c] <= x <= X_MAX[c]:
             X.append(x)
-            Y.append(eval(streplace(FUNC[c])))
+            Y.append(eval(streplace(FUNC[c], 'there')))
             percents += 0.1
             print('Построение ' + str(c + 1) + '-й функи: ' + f'{round(percents, 2)}' + '%\r', end = '', flush = True)
             x += (X_MAX[c] - X_MIN[c]) / 10 ** 3
