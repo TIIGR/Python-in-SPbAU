@@ -1,17 +1,15 @@
 
 def scan(sequence):
     index = 0; result = []
-    while index < len(sequence):
-        string = ""
-        index_st = sequence[index:].find("ATG") + index
-        while index_st in range(len(sequence)):
-            next_codon = sequence[index_st:index_st+3]
+    INDEX_STARTS = [index for index in range(len(sequence)) if sequence.startswith("ATG", index)]
+    for index in INDEX_STARTS:
+        print(index)
+        string = ""; next_codon = "ATG"; ind = index
+        while (next_codon != "TAA") and (next_codon != "TGA") and (next_codon != "TAG") and (ind < len(sequence)):
+            next_codon = sequence[ind:ind+3]
             string += next_codon
-            index_st +=3
-            if (next_codon == "TAA") or (next_codon == "TGA") or (next_codon == "TAG"):
-                result.append(string)
-                index += index_st
-                break
+            ind += 3
+        result.append(string)
     return result
 
 def translate(reading_frames, aminos):
