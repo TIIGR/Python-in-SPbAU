@@ -1,8 +1,7 @@
 
 def scan(sequence):
-    index = 0; result = []
-    INDEX_STARTS = [index for index in range(len(sequence)) if sequence.startswith("ATG", index)]
-    for index in INDEX_STARTS:
+    index_starts, result = [index for index in range(len(sequence)) if sequence.startswith("ATG", index)], []
+    for index in index_starts:
         print(index)
         string = ""; next_codon = "ATG"; ind = index
         while (next_codon != "TAA") and (next_codon != "TGA") and (next_codon != "TAG") and (ind < len(sequence)):
