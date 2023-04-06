@@ -9,8 +9,8 @@ def biosplicing(seq):
             aggt_2_aggt_seq = seq[AGGT_ind[len(AGGT_ind) - 1]:]
         AG_ind = [ind for ind in range(len(aggt_2_aggt_seq)) if aggt_2_aggt_seq.startswith("AG", ind)]
         for ind in AG_ind:
-            if aggt_2_aggt_seq[2:ind + 2] != "":
-                aggt_2_ag_seq = aggt_2_aggt_seq[2:ind + 2]
+            aggt_2_ag_seq = aggt_2_aggt_seq[2:ind + 2]
+            if aggt_2_ag_seq != "":
                 rA = aggt_2_ag_seq[:-17].rfind("A")
                 if (aggt_2_ag_seq[rA:-2].count("T") + aggt_2_ag_seq[rA:-2].count("C")) / len(aggt_2_ag_seq[rA:]) >= 0.85:
                     RESULT_seq.append(aggt_2_ag_seq)
